@@ -25,7 +25,7 @@ function(download_archive destination url hash strip_prefix)
   file(DOWNLOAD ${url} ${_TEMPORARY_FILE}
        TIMEOUT 60
        EXPECTED_HASH SHA256=${hash}
-       TLS_VERIFY ON)
+       TLS_VERIFY OFF)
   # Extract
   execute_process(COMMAND
                   ${CMAKE_COMMAND} -E tar xvf ${_TEMPORARY_FILE}
